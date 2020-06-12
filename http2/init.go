@@ -13,6 +13,6 @@ var d db.MongoDB
 var bol controller.ResBool
 
 func init() {
-	d = db.MongoDB{"mongodb://mongo-database:27017", "WServiceInput", "Input"}
+	d = db.MongoDB{"mongodb://mongo:27017", "WServiceInput", "Input"}
 	c = controller.Ctrl{}
 }
