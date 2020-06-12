@@ -15,8 +15,13 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix .
 
 FROM alpine:latest
+
 WORKDIR /app/
+
 COPY --from=builder /go/src/github.com/mindpulation/Warehouse-Service-Input /app/Warehouse-Service-Input
+
 WORKDIR "/app/Warehouse-Service-Input"
+
 EXPOSE 8554
+
 ENTRYPOINT ./winput
